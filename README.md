@@ -10,3 +10,7 @@ Your are welcome to use the app to listen to this very README file at [read-it-f
 2. Run `npm install`
 3. Run `npm run dev`
 4. Open `localhost:5173` in your browser
+
+## It has GNOME vibes?
+
+I stole some [colors](https://developer.gnome.org/hig/reference/palette.html) and I used the [Cantarell font](https://fonts.google.com/specimen/Cantarell).
