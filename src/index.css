@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --content1: #ffffff;
+  --content2: #f6f5f4;
+  --content3: #deddda;
+  --content4: #c0bfbc;
+  --content5: #9a9996;
+
+  --background1: #000000;
+  --background2: #241f31;
+  --background3: #3d3846;
+  --background4: #5e5c64;
+  --background5: #77767b;
+
+  --primary1: #99c1f1;
+  --primary2: #62a0ea;
+  --primary3: #3584e4;
+  --primary4: #1c71d8;
+  --primary5: #1a5fb4;
+
+  color-scheme: light dark;
+  font-family: "Cantarell", sans-serif;
+}
+
+body,
+#root {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* invert colors */
+    --content1: #000000;
+    --content2: #241f31;
+    --content3: #3d3846;
+    --content4: #5e5c64;
+    --content5: #77767b;
+
+    --background1: #ffffff;
+    --background2: #f6f5f4;
+    --background3: #deddda;
+    --background4: #c0bfbc;
+    --background5: #9a9996;
+
+    --primary1: #1a5fb4;
+    --primary2: #1c71d8;
+    --primary3: #3584e4;
+    --primary4: #62a0ea;
+    --primary5: #99c1f1;
+  }
+}
