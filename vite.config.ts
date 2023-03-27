@@ -15,27 +15,43 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      injectRegister: "auto",
       registerType: "autoUpdate",
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,svg}"],
+      },
       includeAssets: [],
       manifest: {
         name: displayName,
         short_name: displayName,
         description,
         theme_color: "#3584e4",
+        background_color: "#241f31",
         icons: [
+          {
+            src: "/images/icon/icon.png",
+            type: "image/svg+xml",
+            sizes: "144x144",
+          },
           {
             src: "/images/icon/icon.svg",
             type: "image/svg+xml",
+            sizes: "120x120",
           },
           {
             src: "/images/icon/icon-white.svg",
             type: "image/svg+xml",
+            sizes: "120x120",
           },
           {
             src: "/images/icon/icon-black.svg",
             type: "image/svg+xml",
+            sizes: "120x120",
           },
         ],
+      },
+      devOptions: {
+        enabled: true,
       },
     }),
   ],
