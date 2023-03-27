@@ -61,7 +61,7 @@ export class ReaderService {
     this.synth?.cancel();
     this.onStatusChange();
   };
-  public readonly getVoices = () => this.synth?.getVoices() ?? [];
+  public readonly getVoices = () => getVoices();
 
   public readonly speak = (text: string) => {
     if (!this.speechUtterance || !this.synth) return;
@@ -97,6 +97,12 @@ export class ReaderService {
     this.speechUtterance.volume = settings.voiceVolume;
   };
 }
+
+export const getVoices = () => {
+  const synth = window.speechSynthesis;
+  if (!synth) return [];
+  return synth.getVoices();
+};
 
 const maxWordLength = 64;
 export const getWordStartIndex = (text: string, charIndex: number) => {

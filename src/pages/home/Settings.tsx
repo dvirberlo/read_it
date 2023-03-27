@@ -50,16 +50,18 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
     <div>
       {/* <p>{JSON.stringify(settings.current)}</p> */}
       <div className="flex flex-col flex-wrap p-2 ">
-        <ChoiceSetting
-          label="Voice"
-          values={readerService.getVoices()?.map((voice) => voice.name) ?? []}
-          selectedIndex={readerSettings.current.voiceVoiceIndex}
-          onChange={(index) =>
-            changeSettings(readerSettings, "voiceVoiceIndex", index)
-          }
-          divClassName={inputDivStyle}
-          className={inputStyle}
-        />
+        {readerService.getVoices()?.length && (
+          <ChoiceSetting
+            label="Voice"
+            values={readerService.getVoices()?.map((voice) => voice.name) ?? []}
+            selectedIndex={readerSettings.current.voiceVoiceIndex}
+            onChange={(index) =>
+              changeSettings(readerSettings, "voiceVoiceIndex", index)
+            }
+            divClassName={inputDivStyle}
+            className={inputStyle}
+          />
+        )}
         <ToggleSetting
           label="Auto Play"
           value={userSettings.current.autoPlay}
