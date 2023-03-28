@@ -12,6 +12,7 @@ import {
   RouteObject,
   RouterProvider,
 } from "react-router-dom";
+import { MultiProvider } from "./components/MultiProvider";
 import { ReaderProvider } from "./providers/readerProvider";
 import { UserSettingsProvider } from "./providers/userSettingsProvider";
 import { VoicesProvider } from "./providers/voicesProvider";
@@ -39,17 +40,18 @@ const statusRoutes: RouteObject[] = [
 
 function Main() {
   return (
-    <ReaderProvider>
-      <ReaderSettingsProvider>
-        <UserSettingsProvider>
-          <VoicesProvider>
-            <Layout>
-              <Outlet />
-            </Layout>
-          </VoicesProvider>
-        </UserSettingsProvider>
-      </ReaderSettingsProvider>
-    </ReaderProvider>
+    <MultiProvider
+      providers={[
+        ReaderProvider,
+        ReaderSettingsProvider,
+        UserSettingsProvider,
+        VoicesProvider,
+      ]}
+    >
+      <Layout>
+        <Outlet />
+      </Layout>
+    </MultiProvider>
   );
 }
 
