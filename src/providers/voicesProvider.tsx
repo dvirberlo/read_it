@@ -9,6 +9,7 @@ export function VoicesProvider({ children }: { children: React.ReactNode }) {
     window.speechSynthesis?.addEventListener("voiceschanged", () => {
       setVoices(getVoices());
     });
+    setVoices(getVoices());
   }, []);
   return (
     <VoicesContext.Provider value={voices}>{children}</VoicesContext.Provider>

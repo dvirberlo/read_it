@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import { ReaderProvider } from "./providers/readerProvider";
 import { UserSettingsProvider } from "./providers/userSettingsProvider";
+import { VoicesProvider } from "./providers/voicesProvider";
 
 export const constRoutes = [
   { id: "Home", path: "/", element: <Home /> },
@@ -41,9 +42,11 @@ function Main() {
     <ReaderProvider>
       <ReaderSettingsProvider>
         <UserSettingsProvider>
-          <Layout>
-            <Outlet />
-          </Layout>
+          <VoicesProvider>
+            <Layout>
+              <Outlet />
+            </Layout>
+          </VoicesProvider>
         </UserSettingsProvider>
       </ReaderSettingsProvider>
     </ReaderProvider>

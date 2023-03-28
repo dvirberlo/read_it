@@ -3,6 +3,7 @@ import { LiveObject, setLiveObject } from "@/hooks/useLiveObject";
 import { useReader } from "@/providers/readerProvider";
 import { useReaderSettings } from "@/providers/readerSettingsProvider";
 import { useUserSettings } from "@/providers/userSettingsProvider";
+import { useVoices } from "@/providers/voicesProvider";
 import { useCallback } from "react";
 import { ChoiceSetting } from "../../components/inputs/ChoiceInput";
 import { ToggleSetting } from "../../components/inputs/ToggleInput";
@@ -18,6 +19,7 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
   const readerSettings = useReaderSettings();
   const userSettings = useUserSettings();
   const readerService = useReader();
+  const voices = useVoices();
 
   // const demoVoiceProps = useCallback(
   //   (index: number) => {
@@ -50,10 +52,10 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
     <div>
       {/* <p>{JSON.stringify(settings.current)}</p> */}
       <div className="flex flex-col flex-wrap p-2 ">
-        {readerService.getVoices()?.length && (
+        {voices?.length ? (
           <ChoiceSetting
             label="Voice"
-            values={readerService.getVoices()?.map((voice) => voice.name) ?? []}
+            values={voices?.map((voice) => voice.name) ?? []}
             selectedIndex={readerSettings.current.voiceVoiceIndex}
             onChange={(index) =>
               changeSettings(readerSettings, "voiceVoiceIndex", index)
@@ -61,7 +63,7 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
             divClassName={inputDivStyle}
             className={inputStyle}
           />
-        )}
+        ) : null}
         <ToggleSetting
           label="Auto Play"
           value={userSettings.current.autoPlay}
