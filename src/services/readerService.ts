@@ -1,3 +1,4 @@
+import { detectLanguageChars, Language } from "@/lib/languageDetector";
 import { emptyReadingState, ReadingState } from "@/types/reader";
 import { ReaderSettings } from "@/types/readerSettings";
 
@@ -64,13 +65,23 @@ export class ReaderService {
   public readonly getVoices = () => getVoices();
 
   public readonly speak = (text: string) => {
-    if (!this.speechUtterance || !this.synth) return;
+    if (!this.speechUtterance) return;
     this.text = text;
+    const lang = detectLanguageChars(text) ?? "en-US";
+    if (this.speechUtterance.voice?.lang !== lang) this.setLangVoice(lang);
+    this.speechUtterance.lang = lang;
     this.speechUtterance.text = text;
     this.cancel();
     this.state.status = "speaking";
     this.synth?.speak(this.speechUtterance);
     this.onStatusChange();
+  };
+
+  private readonly setLangVoice = (lang: Language) => {
+    if (!this.speechUtterance) return;
+    const voices = this.synth.getVoices();
+    const voice = voices.find((v) => v.lang === lang);
+    if (voice) this.speechUtterance.voice = voice;
   };
 
   private readonly smartResume = () =>
