@@ -27,7 +27,7 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
   );
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-y-auto">
       <div className="flex flex-col flex-wrap p-2 w-full items-center">
         <ToggleSetting
           label="Auto Play"

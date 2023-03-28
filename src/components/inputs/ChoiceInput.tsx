@@ -1,17 +1,9 @@
 import { LabeledInput } from "./Shared";
 
-export function ChoiceSetting({
-  label,
-  values,
-  selectedIndex = 0,
-  onChange,
-  divClassName,
-  optionProps,
-  className,
-}: {
+interface ChoiceSettingProps {
   label: string;
   values: string[];
-  selectedIndex?: number;
+  selectedIndex: number;
   onChange: (index: number) => void;
   divClassName?: string;
   optionProps?: (
@@ -35,7 +27,7 @@ export const ChoiceSetting: React.FC<ChoiceSettingProps> = ({
   return (
     <LabeledInput label={label} className={divClassName}>
       <select
-        className={className}
+        className={`${className} rounded-md`}
         value={selectedIndex}
         onChange={(e) => {
           const index = parseInt(e.target.value);
@@ -50,4 +42,4 @@ export const ChoiceSetting: React.FC<ChoiceSettingProps> = ({
       </select>
     </LabeledInput>
   );
-}
+};
