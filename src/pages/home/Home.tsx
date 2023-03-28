@@ -74,7 +74,7 @@ function ReaderButton({
 
   return (
     <button
-      className="bg-primary3 text-content1 p-2 rounded-md min-w-[100px] max-w-[150px] w-1/4 mx-2 flex justify-evenly"
+      className="bg-primary3 text-content1 p-2 rounded-md min-w-[100px] max-w-[150px] w-1/4 mx-2 flex justify-evenly hover:shadow-lg"
       onClick={action}
     >
       {

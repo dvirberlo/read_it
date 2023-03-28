@@ -10,7 +10,7 @@ import { ToggleSetting } from "../../components/inputs/ToggleInput";
 import { Delayer } from "../../lib/delayer";
 
 const inputDivStyle: string =
-  "flex flex-row items-center my-2 justify-around w-full max-w-[600px]";
+  "flex flex-row items-center my-2 justify-between w-full max-w-[600px]";
 const inputStyle: string = "max-w-[500px] w-2/3";
 
 // const readerDemoTimeout = 1000;
@@ -50,8 +50,14 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
 
   return (
     <div className="w-full">
-      {/* <p>{JSON.stringify(settings.current)}</p> */}
       <div className="flex flex-col flex-wrap p-2 w-full items-center">
+        <ToggleSetting
+          label="Auto Play"
+          value={userSettings.current.autoPlay}
+          onChange={(value) => changeSettings(userSettings, "autoPlay", value)}
+          divClassName={inputDivStyle}
+          className={inputStyle}
+        />
         {voices?.length ? (
           <ChoiceSetting
             label="Voice"
@@ -64,13 +70,6 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
             className={inputStyle}
           />
         ) : null}
-        <ToggleSetting
-          label="Auto Play"
-          value={userSettings.current.autoPlay}
-          onChange={(value) => changeSettings(userSettings, "autoPlay", value)}
-          divClassName={inputDivStyle}
-          className={inputStyle}
-        />
         <SliderInput
           label="Speed"
           value={readerSettings.current.voiceRate}
