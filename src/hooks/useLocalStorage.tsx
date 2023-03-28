@@ -14,7 +14,7 @@ export function useLocalStorage<T>(
   });
   const setValue = (value: T | ((val: T) => T)) => {
     const valueToStore = value instanceof Function ? value(storedValue) : value;
-    setStoredValue(valueToStore);
+    setStoredValue({ ...initValue, ...valueToStore });
     storageEntry.current.set(valueToStore);
   };
   return [storedValue, setValue] as const;
