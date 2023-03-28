@@ -7,7 +7,7 @@ import { useVoices } from "@/providers/voicesProvider";
 import { useCallback } from "react";
 import { ChoiceSetting } from "../../components/inputs/ChoiceInput";
 import { ToggleSetting } from "../../components/inputs/ToggleInput";
-import { Delayer } from "./delayer";
+import { Delayer } from "../../lib/delayer";
 
 const inputDivStyle: string =
   "flex flex-row items-center my-2 justify-around w-full max-w-[600px]";

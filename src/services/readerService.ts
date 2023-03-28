@@ -75,11 +75,6 @@ export class ReaderService {
 
   private readonly smartResume = () =>
     this.speak(this.text.substring(this.state.charWordIndex));
-  // this.speak(
-  //   this.text.substring(
-  //     getWordStartIndex(this.text, this.state.charWordIndex - 1)
-  //   )
-  // );
 
   public readonly changeSettings = (settings: ReaderSettings) => {
     const setBreak = this.state.status === "speaking";
@@ -102,13 +97,4 @@ export const getVoices = () => {
   const synth = window.speechSynthesis;
   if (!synth) return [];
   return synth.getVoices();
-};
-
-const maxWordLength = 64;
-export const getWordStartIndex = (text: string, charIndex: number) => {
-  const indexInWord = text
-    .substring(charIndex - maxWordLength, charIndex)
-    .lastIndexOf(" ");
-  // return indexInWord === -1 ? 0 : indexInWord + 1;
-  return indexInWord + 1;
 };

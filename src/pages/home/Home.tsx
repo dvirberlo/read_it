@@ -2,7 +2,7 @@ import { Settings } from "@/pages/home/Settings";
 import { useReader, useReaderState } from "@/providers/readerProvider";
 import { useUserSettings } from "@/providers/userSettingsProvider";
 import { useCallback, useRef } from "react";
-import { createDelayer, Delayer } from "./delayer";
+import { createDelayer, Delayer } from "../../lib/delayer";
 
 export default function Home() {
   const userSettings = useUserSettings();
