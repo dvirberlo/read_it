@@ -36,6 +36,24 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
           divClassName={inputDivStyle}
           className={inputStyle}
         />
+        <ToggleSetting
+          label="Auto Highlight"
+          value={userSettings.current.autoHighlight}
+          onChange={(value) =>
+            changeSettings(userSettings, "autoHighlight", value)
+          }
+          divClassName={inputDivStyle}
+          className={inputStyle}
+        />
+        <ToggleSetting
+          label="Auto Scroll"
+          value={userSettings.current.autoScroll}
+          onChange={(value) =>
+            changeSettings(userSettings, "autoScroll", value)
+          }
+          divClassName={inputDivStyle}
+          className={inputStyle}
+        />
         {voices?.length ? (
           <ChoiceSetting
             label="Voice"

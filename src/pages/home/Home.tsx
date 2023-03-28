@@ -3,6 +3,7 @@ import { useReader, useReaderState } from "@/providers/readerProvider";
 import { useUserSettings } from "@/providers/userSettingsProvider";
 import { useCallback, useRef } from "react";
 import { createDelayer, Delayer } from "../../lib/delayer";
+import { TextArea } from "./TextArea";
 
 export default function Home() {
   const userSettings = useUserSettings();
@@ -17,15 +18,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-grow items-center">
-      <textarea
-        ref={textAreaRef}
-        className="resize-none w-full bg-background3 p-2 text-content1 focus:outline-none h-3/5"
-        placeholder="Type or paste here to hear it spoken"
-        autoFocus
-        {...(userSettings.current.autoPlay && {
-          onChange: speak,
-        })}
-      />
+      <TextArea textAreaRef={textAreaRef} speak={speak} />
 
       <div className="mt-2" />
       <div className="flex flex-row-reverse w-full flex-wrap items-center content-center">

@@ -24,6 +24,8 @@ export class ReaderService {
           if (!event.charIndex || event.charIndex === this.state.charWordIndex)
             return;
           this.state.charWordIndex = event.charIndex;
+          this.state.wordCharLength =
+            event.charLength ?? this.state.wordCharLength;
           this.onStatusChange();
         }
       );
@@ -58,7 +60,8 @@ export class ReaderService {
   };
   public readonly cancel = (saveIndex = false) => {
     this.state.status = "stopped";
-    if (!saveIndex) this.state.charWordIndex = 0;
+    if (!saveIndex) this.state.charWordIndex = emptyReadingState.charWordIndex;
+    if (!saveIndex) this.state.charWordIndex = emptyReadingState.charWordIndex;
     this.synth?.cancel();
     this.onStatusChange();
   };
