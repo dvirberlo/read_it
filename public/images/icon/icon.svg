@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="120px"
-    height="120px" viewBox="-0.5 -0.5 120 120">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="512px"
+    height="512px" viewBox="-0.5 -0.5 512 512">
     <defs>
         <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-1a5fb4-1-1c71d8-1-s-0">
             <stop offset="0%" style="stop-color: rgb(26, 95, 180); stop-opacity: 1;" />
@@ -21,23 +21,26 @@
         </linearGradient>
     </defs>
     <g>
-        <rect x="11" y="24" width="49" height="6" rx="0.9" ry="0.9" fill="#1a5fb4" stroke="none" pointer-events="all" />
-        <rect x="21" y="38" width="39" height="6" rx="0.9" ry="0.9" fill="url(#mx-gradient-1a5fb4-1-1c71d8-1-s-0)"
-            stroke="none" pointer-events="all" />
-        <rect x="11" y="51" width="49" height="6" rx="0.9" ry="0.9" fill="#1c71d8" stroke="none" pointer-events="all" />
-        <rect x="21" y="64" width="39" height="6" rx="0.9" ry="0.9" fill="url(#mx-gradient-1c71d8-1-3584e4-1-s-0)"
-            stroke="none" pointer-events="all" />
-        <rect x="11" y="78" width="49" height="6" rx="0.9" ry="0.9" fill="#3584e4" stroke="none" pointer-events="all" />
-        <rect x="27" y="91" width="33" height="6" rx="0.9" ry="0.9" fill="url(#mx-gradient-3584e4-1-62a0ea-1-s-0)"
-            stroke="none" pointer-events="all" />
+        <rect x="16" y="81.4" width="237.65" height="29.1" rx="4.36" ry="4.36" fill="#1a5fb4" stroke="none"
+            pointer-events="none" />
+        <rect x="64.5" y="149.3" width="189.15" height="29.1" rx="4.36" ry="4.36"
+            fill="url(#mx-gradient-1a5fb4-1-1c71d8-1-s-0)" stroke="none" pointer-events="none" />
+        <rect x="16" y="212.35" width="237.65" height="29.1" rx="4.36" ry="4.36" fill="#1c71d8" stroke="none"
+            pointer-events="none" />
+        <rect x="64.5" y="275.4" width="189.15" height="29.1" rx="4.36" ry="4.36"
+            fill="url(#mx-gradient-1c71d8-1-3584e4-1-s-0)" stroke="none" pointer-events="none" />
+        <rect x="16" y="343.3" width="237.65" height="29.1" rx="4.36" ry="4.36" fill="#3584e4" stroke="none"
+            pointer-events="none" />
+        <rect x="93.6" y="406.35" width="160.05" height="29.1" rx="4.36" ry="4.36"
+            fill="url(#mx-gradient-3584e4-1-62a0ea-1-s-0)" stroke="none" pointer-events="none" />
         <path
-            d="M 70 20 C 84.34 20 97.59 27.68 104.72 40.13 C 111.84 52.58 111.76 67.89 104.49 80.26 C 97.23 92.63 83.89 100.16 69.55 100 L 69.6 95.2 C 82.23 95.34 93.96 88.71 100.35 77.83 C 106.74 66.94 106.82 53.47 100.55 42.51 C 94.28 31.56 82.62 24.8 70 24.8 Z"
-            fill="url(#mx-gradient-1a5fb4-1-3584e4-1-s-0)" stroke="none" pointer-events="all" />
+            d="M 302.15 62 C 371.72 62 435.96 99.25 470.52 159.63 C 505.08 220.01 504.66 294.27 469.43 354.26 C 434.19 414.24 369.54 450.77 299.97 449.99 L 300.23 426.71 C 361.45 427.4 418.35 395.25 449.35 342.47 C 480.36 289.68 480.73 224.33 450.32 171.19 C 419.9 118.06 363.37 85.28 302.15 85.28 Z"
+            fill="url(#mx-gradient-1a5fb4-1-3584e4-1-s-0)" stroke="none" pointer-events="none" />
         <path
-            d="M 70 35 C 78.97 35 87.24 39.8 91.7 47.58 C 96.15 55.36 96.1 64.93 91.56 72.66 C 87.02 80.39 78.68 85.1 69.72 85 L 69.77 80.75 C 77.21 80.83 84.12 76.93 87.89 70.51 C 91.66 64.09 91.71 56.15 88.01 49.69 C 84.31 43.23 77.44 39.25 70 39.25 Z"
-            fill="url(#mx-gradient-1a5fb4-1-3584e4-1-s-0)" stroke="none" pointer-events="all" />
+            d="M 302.15 134.75 C 345.63 134.75 385.78 158.03 407.38 195.77 C 428.98 233.51 428.72 279.92 406.7 317.41 C 384.68 354.9 344.27 377.73 300.79 377.24 L 301.02 356.63 C 337.11 357.04 370.65 338.09 388.93 306.97 C 407.2 275.85 407.42 237.33 389.49 206.01 C 371.57 174.69 338.24 155.36 302.15 155.36 Z"
+            fill="url(#mx-gradient-1a5fb4-1-3584e4-1-s-0)" stroke="none" pointer-events="none" />
         <path
-            d="M 70 47 C 74.48 47 78.62 49.4 80.85 53.29 C 83.08 57.18 83.05 61.97 80.78 65.83 C 78.51 69.7 74.34 72.05 69.86 72 L 69.91 67.75 C 72.87 67.78 75.62 66.23 77.11 63.68 C 78.61 61.13 78.63 57.97 77.16 55.4 C 75.69 52.83 72.96 51.25 70 51.25 Z"
-            fill="url(#mx-gradient-1c71d8-1-3584e4-1-s-0)" stroke="none" pointer-events="all" />
+            d="M 302.15 192.95 C 323.89 192.95 343.97 204.59 354.77 223.46 C 365.57 242.33 365.44 265.53 354.42 284.28 C 343.41 303.03 323.21 314.44 301.47 314.2 L 301.7 293.58 C 316.05 293.75 329.38 286.21 336.65 273.84 C 343.92 261.47 344 246.15 336.88 233.7 C 329.75 221.25 316.5 213.56 302.15 213.56 Z"
+            fill="url(#mx-gradient-1c71d8-1-3584e4-1-s-0)" stroke="none" pointer-events="none" />
     </g>
 </svg>

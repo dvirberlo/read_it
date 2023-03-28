@@ -29,24 +29,34 @@ export default defineConfig({
         background_color: "#deddda",
         icons: [
           {
-            src: "/images/icon/icon.png",
-            type: "image/svg+xml",
-            sizes: "144x144",
-          },
-          {
             src: "/images/icon/icon.svg",
             type: "image/svg+xml",
-            sizes: "120x120",
+            sizes: "512x512",
+            purpose: "any maskable",
           },
           {
             src: "/images/icon/icon-white.svg",
             type: "image/svg+xml",
-            sizes: "120x120",
+            sizes: "512x512",
+            purpose: "any maskable",
           },
           {
             src: "/images/icon/icon-black.svg",
             type: "image/svg+xml",
-            sizes: "120x120",
+            sizes: "512x512",
+            purpose: "any maskable",
+          },
+          {
+            src: "/images/icon/icon.png",
+            type: "image/png",
+            sizes: "192x192",
+            purpose: "any maskable",
+          },
+          {
+            src: "/images/icon/icon512.png",
+            type: "image/png",
+            sizes: "512x512",
+            purpose: "any maskable",
           },
         ],
       },

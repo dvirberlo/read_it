@@ -30,9 +30,11 @@ export const SliderInput: React.FC<SliderInputProps> = ({
   useEffect(() => {
     if (inputRef.current) inputRef.current.value = value.toString();
   }, [value]);
+  const id = useRef(`label_${Math.random().toString(36).slice(2)}`);
   return (
-    <LabeledInput label={label} className={divClassName}>
+    <LabeledInput label={label} className={divClassName} htmlFor={id.current}>
       <input
+        id={id.current}
         className={className}
         ref={inputRef}
         type="range"

@@ -23,6 +23,8 @@
   --primary4: #1c71d8;
   --primary5: #1a5fb4;
 
+  --iconUrl: url("/images/icon/icon-white.svg");
+
   color-scheme: light dark;
   font-family: "Cantarell", sans-serif;
 }
@@ -35,6 +37,15 @@ body,
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+i.themeIcon {
+  background-image: var(--iconUrl);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -57,5 +68,7 @@ body,
     --primary3: #3584e4;
     --primary4: #62a0ea;
     --primary5: #99c1f1;
+
+    --iconUrl: url("/images/icon/icon-black.svg");
   }
 }

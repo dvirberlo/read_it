@@ -69,18 +69,12 @@ const ReaderButton: React.FC<ReaderButtonProps> = ({
 
   return (
     <button
-      className="bg-primary3 text-content1 p-2 rounded-md min-w-[100px] max-w-[150px] w-1/4 mx-2 flex justify-evenly hover:shadow-lg"
+      className="bg-primary5 text-content1 p-2 rounded-md min-w-[100px] max-w-[150px] w-1/4 mx-2 flex justify-evenly hover:shadow-lg"
       onClick={action}
     >
       {
         {
-          stopped: (
-            <img
-              className="inline-block  h-6 items-baseline"
-              src="/images/icon/icon-white.svg"
-              alt="speaker"
-            />
-          ),
+          stopped: <i className="inline-block h-6 items-baseline themeIcon" />,
           speaking: <span className="">&#10074;&#10074;</span>,
           paused: <span className="">&#9654;</span>,
         }[readerState.status]

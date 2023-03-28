@@ -15,6 +15,9 @@ export default function Header() {
         className="h-full w-auto mx-2 cursor-pointer"
         src="/images/icon/icon.svg"
         onClick={() => navigateTo(pathsByName.Home)}
+        alt="app icon"
+        width="30"
+        height="30"
       />
       <p
         className="text-content1 cursor-pointer"
