@@ -1,11 +1,13 @@
 import { displayName } from "@/../package.json";
-import { pathsByName, routeIndexByPath } from "@/main";
+import { pathsByName, routeIndexByPath, routes } from "@/main";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigateTo = useNavigate();
+
   const location = useLocation();
-  const routeIndex = routeIndexByPath[location.pathname] ?? -1;
+  const index = routeIndexByPath[location.pathname];
+  const routeName = index === undefined ? undefined : routes[index].id;
 
   return (
     <header className="flex flex-row flex-none items-center bg-background3 text-content1 w-full h-12">
@@ -22,9 +24,13 @@ export default function Header() {
       </p>
       <p
         className="ml-auto mr-4 cursor-pointer hover:text-primary4 text-content2"
-        onClick={() => navigateTo(pathsByName.About)}
+        onClick={() =>
+          navigateTo(
+            routeName === "Home" ? pathsByName.About : pathsByName.Home
+          )
+        }
       >
-        About
+        {routeName === "Home" ? "About" : "Home"}
       </p>
     </header>
   );

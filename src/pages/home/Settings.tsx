@@ -10,8 +10,8 @@ import { ToggleSetting } from "../../components/inputs/ToggleInput";
 import { Delayer } from "./delayer";
 
 const inputDivStyle: string =
-  "flex flex-row flex-wrap items-center my-2 justify-around";
-const inputStyle: string = "max-w-[500px] w-1/3 flex-grow";
+  "flex flex-row items-center my-2 justify-around w-full max-w-[600px]";
+const inputStyle: string = "max-w-[500px] w-2/3";
 
 // const readerDemoTimeout = 1000;
 
@@ -49,9 +49,9 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
   );
 
   return (
-    <div>
+    <div className="w-full">
       {/* <p>{JSON.stringify(settings.current)}</p> */}
-      <div className="flex flex-col flex-wrap p-2 ">
+      <div className="flex flex-col flex-wrap p-2 w-full items-center">
         {voices?.length ? (
           <ChoiceSetting
             label="Voice"

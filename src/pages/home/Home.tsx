@@ -74,29 +74,31 @@ function ReaderButton({
 
   return (
     <button
-      className="bg-primary3 text-content1 p-2 rounded-md min-w-[100px] max-w-[150px] w-1/4 mx-2"
+      className="bg-primary3 text-content1 p-2 rounded-md min-w-[100px] max-w-[150px] w-1/4 mx-2 flex justify-evenly"
       onClick={action}
     >
       {
         {
           stopped: (
             <img
-              className="inline-block mr-1 h-6"
+              className="inline-block  h-6 items-baseline"
               src="/images/icon/icon-white.svg"
               alt="speaker"
             />
           ),
-          speaking: <span className="mr-1">&#10074;&#10074;</span>,
-          paused: <span className="mr-1">&#9654;</span>,
+          speaking: <span className="">&#10074;&#10074;</span>,
+          paused: <span className="">&#9654;</span>,
         }[readerState.status]
       }
-      {
+      <span className="">
         {
-          stopped: "Read It",
-          speaking: "Pause",
-          paused: "Resume",
-        }[readerState.status]
-      }
+          {
+            stopped: "Read It",
+            speaking: "Pause",
+            paused: "Resume",
+          }[readerState.status]
+        }
+      </span>
     </button>
   );
 }
