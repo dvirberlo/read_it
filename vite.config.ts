@@ -26,7 +26,7 @@ export default defineConfig({
         short_name: displayName,
         description,
         theme_color: "#62a0ea",
-        background_color: "#3d3846",
+        background_color: "#deddda",
         icons: [
           {
             src: "/images/icon/icon.png",
