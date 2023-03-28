@@ -1,18 +1,7 @@
 import { useEffect, useRef } from "react";
 import { LabeledInput } from "./Shared";
 
-export function SliderInput({
-  label,
-  value,
-  onChange,
-  min = 0,
-  max = 100,
-  step = 1,
-  divClassName,
-  className,
-  defaultValue,
-  integer = false,
-}: {
+export interface SliderInputProps {
   label: string;
   value: number;
   onChange: (value: number) => void;
@@ -23,7 +12,20 @@ export function SliderInput({
   className?: string;
   defaultValue?: number;
   integer?: boolean;
-}) {
+}
+
+export const SliderInput: React.FC<SliderInputProps> = ({
+  label,
+  value,
+  onChange,
+  min = 0,
+  max = 100,
+  step = 1,
+  divClassName,
+  className,
+  defaultValue,
+  integer = false,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (inputRef.current) inputRef.current.value = value.toString();
@@ -47,4 +49,4 @@ export function SliderInput({
       />
     </LabeledInput>
   );
-}
+};

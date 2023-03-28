@@ -1,6 +1,5 @@
 import { SliderInput } from "@/components/inputs/SliderInput";
 import { LiveObject, setLiveObject } from "@/hooks/useLiveObject";
-import { useReader } from "@/providers/readerProvider";
 import { useReaderSettings } from "@/providers/readerSettingsProvider";
 import { useUserSettings } from "@/providers/userSettingsProvider";
 import { useVoices } from "@/providers/voicesProvider";
@@ -13,31 +12,10 @@ const inputDivStyle: string =
   "flex flex-row items-center my-2 justify-between w-full max-w-[600px]";
 const inputStyle: string = "max-w-[500px] w-2/3";
 
-// const readerDemoTimeout = 1000;
-
 export function Settings({ readDelayer }: { readDelayer: Delayer }) {
   const readerSettings = useReaderSettings();
   const userSettings = useUserSettings();
-  const readerService = useReader();
   const voices = useVoices();
-
-  // const demoVoiceProps = useCallback(
-  //   (index: number) => {
-  //     let timeout: NodeJS.Timeout | undefined;
-  //     return {
-  //       onMouseEnter: () => {
-  //         timeout = setTimeout(
-  //           () => readerService.demoVoice(index),
-  //           readerDemoTimeout
-  //         );
-  //       },
-  //       onMouseLeave: () => {
-  //         clearTimeout(timeout);
-  //       },
-  //     };
-  //   },
-  //   [readerService]
-  // );
 
   const changeSettings = useCallback(
     <T extends object>(

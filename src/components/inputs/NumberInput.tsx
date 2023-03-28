@@ -1,19 +1,21 @@
 import { useEffect, useRef } from "react";
 import { LabeledInput } from "./Shared";
 
-export function NumberSetting({
-  label,
-  value,
-  onChange,
-  divClassName,
-  className,
-}: {
+interface NumberSettingProps {
   label: string;
   value: number;
   onChange: (value: number) => void;
   divClassName?: string;
   className?: string;
-}) {
+}
+
+export const NumberSetting: React.FC<NumberSettingProps> = ({
+  label,
+  value,
+  onChange,
+  divClassName,
+  className,
+}) => {
   const input = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -33,4 +35,4 @@ export function NumberSetting({
       />
     </LabeledInput>
   );
-}
+};

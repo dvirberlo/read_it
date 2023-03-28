@@ -1,18 +1,20 @@
 import { LabeledInput } from "./Shared";
 
-export function ToggleSetting({
-  label,
-  value,
-  onChange,
-  divClassName,
-  className,
-}: {
+export interface ToggleSettingProps {
   label: string;
   value: boolean;
   onChange: (value: boolean) => void;
   divClassName?: string;
   className?: string;
-}) {
+}
+
+export const ToggleSetting: React.FC<ToggleSettingProps> = ({
+  label,
+  value,
+  onChange,
+  divClassName,
+  className,
+}) => {
   return (
     <LabeledInput label={label} className={divClassName}>
       <div className={className}>
@@ -31,4 +33,4 @@ export function ToggleSetting({
       </div>
     </LabeledInput>
   );
-}
+};

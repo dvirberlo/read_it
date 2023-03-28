@@ -42,15 +42,17 @@ export default function Home() {
   );
 }
 
-function ReaderButton({
-  autoPlay,
-  readDelayer,
-  textAreaRef,
-}: {
+interface ReaderButtonProps {
   autoPlay: boolean;
   readDelayer: Delayer;
   textAreaRef: React.RefObject<HTMLTextAreaElement>;
-}) {
+}
+
+const ReaderButton: React.FC<ReaderButtonProps> = ({
+  autoPlay,
+  readDelayer,
+  textAreaRef,
+}) => {
   const readerService = useReader();
   const readerState = useReaderState(readerService);
 
@@ -101,4 +103,4 @@ function ReaderButton({
       </span>
     </button>
   );
-}
+};

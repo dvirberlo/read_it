@@ -21,7 +21,17 @@ export function ChoiceSetting({
     HTMLOptionElement
   >;
   className?: string;
-}) {
+}
+
+export const ChoiceSetting: React.FC<ChoiceSettingProps> = ({
+  label,
+  values,
+  selectedIndex = 0,
+  onChange,
+  divClassName,
+  optionProps,
+  className,
+}) => {
   return (
     <LabeledInput label={label} className={divClassName}>
       <select
