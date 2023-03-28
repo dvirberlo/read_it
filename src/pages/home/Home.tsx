@@ -17,7 +17,7 @@ export default function Home() {
   }, [readerService]);
 
   return (
-    <div className="flex flex-col flex-grow items-center">
+    <div className="flex flex-col flex-grow items-center w-full h-full overflow-hidden">
       <TextArea textAreaRef={textAreaRef} speak={speak} />
 
       <div className="mt-2" />
