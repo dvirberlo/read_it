@@ -4,13 +4,13 @@ import { useReaderSettings } from "@/providers/readerSettingsProvider";
 import { useUserSettings } from "@/providers/userSettingsProvider";
 import { useVoices } from "@/providers/voicesProvider";
 import { useCallback } from "react";
-import { ChoiceSetting } from "../../components/inputs/ChoiceInput";
-import { ToggleSetting } from "../../components/inputs/ToggleInput";
+import { ChoiceInput } from "../../components/inputs/ChoiceInput";
+import { ToggleInput } from "../../components/inputs/ToggleInput";
 import { Delayer } from "../../lib/delayer";
 
 const inputDivStyle: string =
   "flex flex-row items-center my-2 justify-between w-full max-w-[600px]";
-const inputStyle: string = "max-w-[500px] w-2/3";
+const inputStyle: string = "max-w-[500px] w-2/3 accent-primary3";
 
 export function Settings({ readDelayer }: { readDelayer: Delayer }) {
   const readerSettings = useReaderSettings();
@@ -28,14 +28,14 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
 
   return (
     <div className="flex flex-col p-2 items-center overflow-y-auto w-full">
-      <ToggleSetting
+      <ToggleInput
         label="Auto Play"
         value={userSettings.current.autoPlay}
         onChange={(value) => changeSettings(userSettings, "autoPlay", value)}
         divClassName={inputDivStyle}
         className={inputStyle}
       />
-      <ToggleSetting
+      <ToggleInput
         label="Auto Highlight"
         value={userSettings.current.autoHighlight}
         onChange={(value) =>
@@ -44,7 +44,7 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
         divClassName={inputDivStyle}
         className={inputStyle}
       />
-      <ToggleSetting
+      <ToggleInput
         label="Auto Scroll"
         value={userSettings.current.autoScroll}
         onChange={(value) => changeSettings(userSettings, "autoScroll", value)}
@@ -52,7 +52,7 @@ export function Settings({ readDelayer }: { readDelayer: Delayer }) {
         className={inputStyle}
       />
       {voices?.length ? (
-        <ChoiceSetting
+        <ChoiceInput
           label="Voice"
           values={voices?.map((voice) => voice.name) ?? []}
           selectedIndex={readerSettings.current.voiceVoiceIndex}

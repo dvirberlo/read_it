@@ -1,3 +1,4 @@
+import { ThemeIcon } from "@/components/ThemeIcon";
 import { Settings } from "@/pages/home/Settings";
 import { useReader, useReaderState } from "@/providers/readerProvider";
 import { useUserSettings } from "@/providers/userSettingsProvider";
@@ -74,7 +75,7 @@ const ReaderButton: React.FC<ReaderButtonProps> = ({
     >
       {
         {
-          stopped: <i className="inline-block h-6 items-baseline themeIcon" />,
+          stopped: <ThemeIcon className="!h-6 !w-6" />,
           speaking: <span className="">&#10074;&#10074;</span>,
           paused: <span className="">&#9654;</span>,
         }[readerState.status]

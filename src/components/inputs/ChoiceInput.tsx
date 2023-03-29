@@ -1,6 +1,6 @@
 import { LabeledInput } from "./Shared";
 
-interface ChoiceSettingProps {
+interface ChoiceInputProps {
   label: string;
   values: string[];
   selectedIndex: number;
@@ -15,7 +15,7 @@ interface ChoiceSettingProps {
   className?: string;
 }
 
-export const ChoiceSetting: React.FC<ChoiceSettingProps> = ({
+export const ChoiceInput: React.FC<ChoiceInputProps> = ({
   label,
   values,
   selectedIndex = 0,

@@ -1,6 +1,7 @@
 import { displayName } from "@/../package.json";
 import { pathsByName, routeIndexByPath, routes } from "@/main";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ThemeIcon } from "../ThemeIcon";
 
 export default function Header() {
   const navigateTo = useNavigate();
@@ -11,14 +12,7 @@ export default function Header() {
 
   return (
     <header className="flex flex-row flex-none items-center bg-background3 text-content1 w-full h-12">
-      <img
-        className="h-full w-auto mx-2 cursor-pointer"
-        src="/images/icon/icon.svg"
-        onClick={() => navigateTo(pathsByName.Home)}
-        alt="app icon"
-        width="30"
-        height="30"
-      />
+      <ThemeIcon className="!h-7 !w-7 cursor-pointer ml-4 mr-2" />
       <p
         className="text-content1 cursor-pointer"
         onClick={() => navigateTo(pathsByName.Home)}

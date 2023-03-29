@@ -3,6 +3,15 @@
   "displayName": "Read It",
   "description": "Read It is a web app that allows you read text aloud, using native speech synthesis.",
   "author": "Read It Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dvirberlo/read_it.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dvirberlo/read_it/issues"
+  },
+  "homepage": "read-it-five.vercel.app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
