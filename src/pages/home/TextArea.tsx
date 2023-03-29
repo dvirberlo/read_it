@@ -12,17 +12,15 @@ export const TextArea: React.FC<TextAreaProps> = ({ textAreaRef, speak }) => {
   const readerService = useReader();
   const readerState = useReaderState(readerService);
   useEffect(() => {
+    // Note: the order of these is important, since scrollTo mutates the textarea value
+    if (userSettings.current.autoScroll)
+      scrollTo(textAreaRef.current, readerState.charWordIndex);
+
     if (userSettings.current.autoHighlight)
       textAreaRef.current?.setSelectionRange(
         readerState.charWordIndex,
         readerState.charWordIndex + readerState.wordCharLength
       );
-
-    if (userSettings.current.autoScroll)
-      textAreaRef.current?.scrollTo({
-        top: getScrollTop(textAreaRef.current, readerState.charWordIndex),
-        behavior: "smooth",
-      });
   }, [readerState.charWordIndex, readerState.wordCharLength]);
   return (
     <textarea
@@ -37,13 +35,20 @@ export const TextArea: React.FC<TextAreaProps> = ({ textAreaRef, speak }) => {
   );
 };
 
-const getScrollTop = (
-  textArea: HTMLTextAreaElement,
-  charIndex: number
-): number => {
-  const lineHeight = parseInt(getComputedStyle(textArea).lineHeight, 10);
-  const linesPerPage = Math.floor(textArea.clientHeight / lineHeight);
-  const totalLines = textArea.value.substr(0, charIndex).split("\n").length;
-
-  return lineHeight * (totalLines - linesPerPage);
+/**
+ * Scrolls the textarea to the given character index
+ *
+ * Note: this mutates the textarea value
+ * @param textArea textarea element
+ * @param charIndex character index to scroll to
+ */
+const scrollTo = (textArea: HTMLTextAreaElement | null, charIndex: number) => {
+  if (!textArea || charIndex < 0) return;
+  textArea.focus();
+  var body = textArea.value;
+  if (body) {
+    textArea.value = body.substring(0, charIndex);
+    textArea.scrollTop = charIndex;
+    textArea.value = body;
+  }
 };
