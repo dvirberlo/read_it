@@ -1,6 +1,6 @@
-import { ReaderService, getVoices } from "./readerService";
-import { beforeEach, describe, it, expect, afterEach, vi } from "vitest";
 import { emptyReadingState } from "@/types/reader";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { getVoices, ReaderService } from "./readerService";
 
 describe("ReaderService", () => {
   let readerService: ReaderService;
