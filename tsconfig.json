@@ -18,8 +18,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "include": ["src", "./package.json"],
   "references": [{ "path": "./tsconfig.node.json" }]
+  // vitest:
 }
