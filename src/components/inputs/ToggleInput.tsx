@@ -23,6 +23,8 @@ export const ToggleInput: React.FC<ToggleInputProps> = ({
             value ? "bg-primary3 flex-row-reverse" : "bg-background3 flex-row"
           } w-10 h-5 rounded-full p-1 cursor-pointer flex items-center`}
           onClick={() => onChange(!value)}
+          role="checkbox"
+          aria-checked={value}
         >
           <div className={`bg-content2 w-4 h-4 rounded-full`} />
         </div>

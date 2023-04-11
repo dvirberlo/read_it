@@ -1,72 +1,7 @@
-import Layout from "@/components/layout/Layout";
-import "@/index.css";
-import About from "@/pages/about/About";
-import Home from "@/pages/home/Home";
-import NotFound from "@/pages/notFound/NotFound";
-import { ReaderSettingsProvider } from "@/providers/readerSettingsProvider";
-import React from "react";
+import { Root } from "@/root/Root";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  Outlet,
-  RouteObject,
-  RouterProvider,
-} from "react-router-dom";
-import { MultiProvider } from "./components/MultiProvider";
-import { ReaderProvider } from "./providers/readerProvider";
-import { UserSettingsProvider } from "./providers/userSettingsProvider";
-import { VoicesProvider } from "./providers/voicesProvider";
-
-export const constRoutes = [
-  { id: "Home", path: "/", element: <Home /> },
-  { id: "About", path: "/about", element: <About /> },
-] as const;
-
-export const routes: RouteObject[] = [...constRoutes];
-
-export const pathsByName = Object.fromEntries(
-  constRoutes.map((route) => [route.id, route.path])
-) as {
-  [k in typeof constRoutes[number]["id"]]: typeof constRoutes[number]["path"];
-};
-
-export const routeIndexByPath: { [k: string]: number } = Object.fromEntries(
-  routes.map((route, index) => [route.path, index])
-);
-
-const statusRoutes: RouteObject[] = [
-  { id: "404", path: "*", element: <NotFound /> },
-];
-
-function Main() {
-  return (
-    <MultiProvider
-      providers={[
-        ReaderProvider,
-        ReaderSettingsProvider,
-        UserSettingsProvider,
-        VoicesProvider,
-      ]}
-    >
-      <Layout>
-        <Outlet />
-      </Layout>
-    </MultiProvider>
-  );
-}
-
-const routerRoutes: RouteObject[] = [
-  {
-    path: "/",
-    element: <Main />,
-    children: [...routes, ...statusRoutes],
-  },
-];
-
-const router = createBrowserRouter(routerRoutes);
+import { router } from "./root/routes";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Root router={router} />
 );

@@ -1,4 +1,3 @@
-import { describe, expect, it, vi } from "vitest";
 import { createDelayer } from "./delayer";
 
 describe("createDelayer", () => {

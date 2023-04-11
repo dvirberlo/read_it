@@ -1,4 +1,3 @@
-import { describe, expect, it } from "vitest";
 import { getWordEndIndex, getWordStartIndex } from "./wordDetector";
 
 describe("getWordStartIndex", () => {

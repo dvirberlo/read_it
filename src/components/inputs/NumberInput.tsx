@@ -9,7 +9,7 @@ interface NumberSettingProps {
   className?: string;
 }
 
-export const NumberSetting: React.FC<NumberSettingProps> = ({
+export const NumberInput: React.FC<NumberSettingProps> = ({
   label,
   value,
   onChange,
@@ -17,13 +17,14 @@ export const NumberSetting: React.FC<NumberSettingProps> = ({
   className,
 }) => {
   const input = useRef<HTMLInputElement>(null);
+  const id = useRef(Math.random().toString(36).slice(2, 9));
 
   useEffect(() => {
     if (input.current) input.current.value = value.toString();
   }, [value]);
 
   return (
-    <LabeledInput label={label} className={divClassName}>
+    <LabeledInput label={label} className={divClassName} htmlFor={id.current}>
       <input
         className={className}
         type="number"
@@ -32,6 +33,7 @@ export const NumberSetting: React.FC<NumberSettingProps> = ({
           const value = parseInt(e.target.value);
           if (!isNaN(value)) onChange(value);
         }}
+        id={id.current}
       />
     </LabeledInput>
   );

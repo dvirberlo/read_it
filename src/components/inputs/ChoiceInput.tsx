@@ -1,9 +1,10 @@
+import { useRef } from "react";
 import { LabeledInput } from "./Shared";
 
 interface ChoiceInputProps {
   label: string;
   values: string[];
-  selectedIndex: number;
+  selectedIndex?: number;
   onChange: (index: number) => void;
   divClassName?: string;
   optionProps?: (
@@ -24,8 +25,9 @@ export const ChoiceInput: React.FC<ChoiceInputProps> = ({
   optionProps,
   className,
 }) => {
+  const id = useRef(Math.random().toString(36).slice(2, 9));
   return (
-    <LabeledInput label={label} className={divClassName}>
+    <LabeledInput label={label} className={divClassName} htmlFor={id.current}>
       <select
         className={`${className} rounded-md`}
         value={selectedIndex}
@@ -33,6 +35,7 @@ export const ChoiceInput: React.FC<ChoiceInputProps> = ({
           const index = parseInt(e.target.value);
           if (!isNaN(index)) onChange(index);
         }}
+        id={id.current}
       >
         {values.map((value, index) => (
           <option key={index} value={index} {...optionProps?.(index)}>

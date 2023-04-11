@@ -1,5 +1,5 @@
 import { displayName } from "@/../package.json";
-import { pathsByName, routeIndexByPath, routes } from "@/main";
+import { pathsByName, routeIndexByPath, routes } from "@/root/routes";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ThemeIcon } from "../ThemeIcon";
 
